@@ -6,7 +6,8 @@
         "subnet_id":"",
         "source_ami": "",
         "ssh_username": "ubuntu",
-        "REMOTE_AWS_ACCOUNT_ID":""
+        "REMOTE_AWS_ACCOUNT_ID":"",
+        "ami_users": "{{ env 'AMI_USERS' }}"
     },
 
     
