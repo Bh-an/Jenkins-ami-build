@@ -24,6 +24,9 @@
             "ami_name": "csye7125_ami_jenkins_{{timestamp}}",
             "ami_description":"${ami_description}",
             "skip_region_validation":"true",
+            "assume_role":{
+                "role_arn":"arn:aws:iam::377151400733:role/github-actions-ami"
+            },
             "launch_block_device_mappings": [
                 {
                     "device_name": "/dev/sda1",
