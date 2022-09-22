@@ -16,9 +16,6 @@
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
             "region": "{{user `aws_region`}}",
-            "assume_role": {
-                "role_arn": "arn:aws:iam::377151400733:role/ghactions_ami_role"
-            },
             "subnet_id": "{{user `vpc_public_sn_id`}}",
             "source_ami": "ami-052efd3df9dad4825",
             "instance_type": "t2.micro",
@@ -41,9 +38,9 @@
         {
             "type": "shell",
             "inline":[
-                "sudo apt update -y",
-                "sudo apt upgrade -y",
-                "sudo apt-get install openjdk-19-jdk-headless -y",
+                "sudo apt-get update -y",
+                "sudo apt install default-jre",
+                "sudo apt install default-jdk",
                 "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg",
                 "sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'",
                 "sudo apt update",
