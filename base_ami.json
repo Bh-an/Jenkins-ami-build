@@ -6,8 +6,7 @@
         "subnet_id":"",
         "source_ami": "",
         "ssh_username": "ubuntu",
-        "REMOTE_AWS_ACCOUNT_ID":"",
-        "ami_users": "{{ env `AMI_USERS` }}"
+        "REMOTE_AWS_ACCOUNT_ID":""
     },
 
     
@@ -19,7 +18,6 @@
             "region": "{{user `aws_region`}}",
             "subnet_id": "{{user `vpc_public_sn_id`}}",
             "source_ami": "ami-052efd3df9dad4825",
-            "ami_users": "{{user `ami_users`}}",
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
             "ami_name": "csye7125_ami_jenkins_{{timestamp}}",
@@ -40,7 +38,8 @@
         {
             "type": "shell",
             "inline":[
-                "sudo apt update",
+                "sudo apt update -y",
+                "sudo apt upgrade -y",
                 "sudo apt-get install openjdk-19-jdk-headless -y",
                 "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg",
                 "sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'",
