@@ -38,7 +38,6 @@
         {
             "type": "shell",
             "inline":[
-                "sudo apt-get update -y",
                 "sudo apt-get install --fix-missing",
                 "sudo apt install default-jre -y",
                 "sudo apt install default-jdk -y",
