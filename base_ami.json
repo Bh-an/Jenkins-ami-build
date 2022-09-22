@@ -39,6 +39,7 @@
             "type": "shell",
             "inline":[
                 "sudo apt-get update -y",
+                "sudo apt-get install --fix-missing",
                 "sudo apt install default-jre -y",
                 "sudo apt install default-jdk -y",
                 "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg",
