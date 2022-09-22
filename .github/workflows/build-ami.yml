@@ -27,5 +27,3 @@ jobs:
           command: build
           arguments: "-color=false -on-error=abort"
           target: base_ami.json
-        env:
-          AMI_USERS: ${{ secrets.AMI_USERS }}
