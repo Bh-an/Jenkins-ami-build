@@ -6,8 +6,12 @@
         "subnet_id":"",
         "source_ami": "",
         "ssh_username": "ubuntu",
+<<<<<<< HEAD
         "REMOTE_AWS_ACCOUNT_ID":"",
         "ami_users": "{{ env 'AMI_USERS' }}"
+=======
+        "REMOTE_AWS_ACCOUNT_ID":""
+>>>>>>> 4d9b29cdca3a581a08b2ecfd859e507843c9f82c
     },
 
     
@@ -17,9 +21,17 @@
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
             "region": "{{user `aws_region`}}",
+<<<<<<< HEAD
             "subnet_id": "{{user `vpc_public_sn_id`}}",
             "source_ami": "ami-052efd3df9dad4825",
             "ami_users": "{{user `ami_users`}}",
+=======
+            "assume_role": {
+                "role_arn": "arn:aws:iam::377151400733:role/ghactions_ami_role"
+            },
+            "subnet_id": "{{user `vpc_public_sn_id`}}",
+            "source_ami": "ami-052efd3df9dad4825",
+>>>>>>> 4d9b29cdca3a581a08b2ecfd859e507843c9f82c
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
             "ami_name": "csye7125_ami_jenkins_{{timestamp}}",
@@ -40,8 +52,14 @@
         {
             "type": "shell",
             "inline":[
+<<<<<<< HEAD
                 "sudo apt update",
                 "sudo apt-get install openjdk-11-jdk-headless -y",
+=======
+                "sudo apt update -y",
+                "sudo apt upgrade -y",
+                "sudo apt-get install openjdk-19-jdk-headless -y",
+>>>>>>> 4d9b29cdca3a581a08b2ecfd859e507843c9f82c
                 "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg",
                 "sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'",
                 "sudo apt update",
