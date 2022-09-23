@@ -39,7 +39,7 @@
             "type": "shell",
             "inline":[
                 "sudo apt-get update -y",
-                "sudo apt-get --fix-broken-install",
+                "sudo apt-get --fix-broken install",
                 "sudo apt-get clean",
                 "sudo apt-get autoclean",
                 "sudo apt-get autoremove",
