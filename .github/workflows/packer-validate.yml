@@ -18,5 +18,3 @@ jobs:
           command: validate
           arguments: -syntax-only
           target: base_ami.json
-        env:
-          PACKER_LOG: 1
