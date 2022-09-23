@@ -17,7 +17,7 @@
             "secret_key": "{{user `aws_secret_key`}}",
             "region": "{{user `aws_region`}}",
             "subnet_id": "{{user `vpc_public_sn_id`}}",
-            "source_ami": "ami-052efd3df9dad4825",
+            "source_ami": "ami-08c40ec9ead489470",
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
             "ami_name": "csye7125_ami_jenkins_{{timestamp}}",
@@ -38,7 +38,7 @@
         {
             "type": "shell",
             "inline":[
-                "sudo apt-get install -y --fix-missing",
+                "sudo apt-get update",
                 "sudo apt-get install -y default-jre",
                 "sudo apt-get install -y default-jdk",
                 "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg",
