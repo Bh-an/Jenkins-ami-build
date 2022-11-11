@@ -50,7 +50,9 @@
                 "sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'",
                 "sudo apt update",
                 "sudo apt install jenkins -y",
-                "java -jar jenkins-plugin-manager-2.12.3.jar --war /usr/lib/jenkins/jenkins.war --plugin-download-directory /var/lib/jenkins/plugins/ --plugins semantic-versioning-plugin:1.14 --verbose",
+                "version=1.0.1",
+                "curl -L -X GET \"https://github.com/jenkinsci/plugin-installation-manager-tool/releases/download/plugin-management-parent-pom-$version/jenkins-plugin-manager-$version.jar\" -o jenkins-plugin-manager-$version.jar",
+                "java -jar jenkins-plugin-manager-$version.jar --plugin-download-directory /var/lib/jenkins/plugins/ --plugins semantic-versioning-plugin:1.14 --verbose",
                 "sudo apt install -y nginx",
                 "sudo snap install core; sudo snap refresh core",
                 "sudo snap install --classic certbot",
@@ -59,3 +61,5 @@
         }
     ]
 }
+
+
