@@ -50,6 +50,8 @@
                 "sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'",
                 "sudo apt update",
                 "sudo apt install jenkins -y",
+                "version=1.0.1",
+                "curl -L -X GET \"https://github.com/jenkinsci/plugin-installation-manager-tool/releases/download/plugin-management-parent-pom-$version/jenkins-plugin-manager-$version.jar\" -o jenkins-plugin-manager-$version.jar",
                 "echo 'jenkins.model.Jenkins.instance.securityRealm.createAccount(\"newuser\", \"newpassword\")' | sudo java -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar -s \"http://localhost:8080\" -auth adminuser:adminpassword -noKeyAuth groovy =",
                 "sudo apt install -y nginx",
                 "sudo snap install core; sudo snap refresh core",
