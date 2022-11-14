@@ -52,6 +52,7 @@
                 "sudo apt install jenkins -y",
                 "version=1.0.1",
                 "curl -L -X GET \"https://github.com/jenkinsci/plugin-installation-manager-tool/releases/download/plugin-management-parent-pom-$version/jenkins-plugin-manager-$version.jar\" -o jenkins-plugin-manager-$version.jar",
+                "curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -",
                 "sudo apt-get install -y nodejs",
                 "sudo apt-get install -y npm",
                 "sudo npm install -y -g semantic-release @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator",
