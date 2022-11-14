@@ -55,6 +55,8 @@
                 "curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh",
                 "sudo bash /tmp/nodesource_setup.sh",
                 "sudo apt install -y nodejs",
+                "sudo apt update",
+                "sudo apt upgrade",
                 "sudo apt-get install -y npm",
                 "sudo npm install -y -g semantic-release @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator",
                 "sudo apt install -y nginx",
