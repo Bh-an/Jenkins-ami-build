@@ -36,36 +36,44 @@
 
     "provisioners": [
         {
-            "type": "shell",
-            "inline":[
-                "sudo apt-get update -y",
-                "sudo apt-get --fix-broken install",
-                "sudo apt-get clean",
-                "sudo apt-get autoclean",
-                "sudo apt-get autoremove",
-                "sudo dpkg --configure -a",
-                "sudo apt-get update -y",
-                "sudo apt-get install openjdk-17-jre-headless -y",
-                "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg",
-                "sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'",
-                "sudo apt update",
-                "sudo apt install jenkins -y",
-                "version=1.0.1",
-                "curl -L -X GET \"https://github.com/jenkinsci/plugin-installation-manager-tool/releases/download/plugin-management-parent-pom-$version/jenkins-plugin-manager-$version.jar\" -o jenkins-plugin-manager-$version.jar",
-                "curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh",
-                "sudo bash /tmp/nodesource_setup.sh",
-                "sudo apt install -y nodejs",
-                "sudo apt update",
-                "sudo apt upgrade",
-                "sudo apt-get install -y npm",
-                "sudo npm install -y -g semantic-release @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator",
-                "sudo apt install -y nginx",
-                "sudo snap install core; sudo snap refresh core",
-                "sudo snap install --classic certbot",
-                "sudo ln -s /snap/bin/certbot /usr/bin/certbot"
-            ]
+        
+        "type": "shell",
+        "inline": [
+        "sudo apt update",
+        "curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc",
+        "echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list",
+        "sudo apt-get update",
+        "sudo apt-get install openjdk-11-jre -y",
+        "sudo apt-get update",
+        "sudo apt-get install jenkins -y",
+        "sudo apt install nginx -y",
+        "sudo apt install certbot python3-certbot-nginx -y",
+        "wget https://get.helm.sh/helm-v3.9.3-linux-amd64.tar.gz",
+        "tar xvf helm-v3.9.3-linux-amd64.tar.gz",
+        "sudo mv linux-amd64/helm /usr/local/bin",
+        "rm helm-v3.9.3-linux-amd64.tar.gz",
+        "rm -rf linux-amd64",
+        "sudo apt-get update",
+        "helm version",
+        "sleep 10",
+        "sudo apt-get update",
+        "curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -",
+        "sudo apt-get update",
+        "sudo apt-get install -y nodejs",
+        "sleep 10",
+        "sudo apt-get update",
+        "sudo npm install -g npm@9.1.1",
+        "sleep 10",
+        "sudo apt-get update",
+        "ls -al",
+        "sleep 10",
+        "sudo apt-get update",
+        "node -v",
+        "npm -v",
+        "sleep 10"
+        ]
         }
-    ]
+        ]
 }
 
 
