@@ -6,7 +6,7 @@
         "subnet_id":"",
         "source_ami": "",
         "ssh_username": "ubuntu",
-        "remote_account_id": "{{env 'remote_account_id'}}"
+        "remote_account_id": "{{env remote_account_id}}"
     },
 
     
