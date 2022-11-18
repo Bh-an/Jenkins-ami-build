@@ -29,8 +29,8 @@ jobs:
           arguments: "-color=false -on-error=abort"
           target: base_ami.json
         env: 
-          remote_account_id: ${{ secrets.REMOTE_ID }}
-          
+          AMI_USERS: ${{ secrets.AMI_USERS }}
+
   AMI_build_Bhan:
     if: github.actor == 'Bh-an'
     runs-on: ubuntu-latest
