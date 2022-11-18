@@ -6,7 +6,7 @@
         "subnet_id":"",
         "source_ami": "",
         "ssh_username": "ubuntu",
-        "REMOTE_AWS_ACCOUNT_ID":""
+        "remote_account_id":""
     },
 
     
@@ -21,6 +21,7 @@
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
             "ami_name": "csye7125_ami_jenkins_{{timestamp}}",
+            "ami_users": "{{user `remote_account_id`}}",
             "ami_description":"${ami_description}",
             "skip_region_validation":"true",
             "launch_block_device_mappings": [
