@@ -5,7 +5,8 @@
         "aws_region":"",
         "subnet_id":"",
         "source_ami": "",
-        "ssh_username": "ubuntu"
+        "ssh_username": "ubuntu",
+        "ami_users": "{{ env `AMI_USERS` }}"
     },
 
     
@@ -20,7 +21,7 @@
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
             "ami_name": "csye7125_ami_jenkins_{{timestamp}}",
-            "ami_users": "{{ env `AMI_USERS` }}",
+            "ami_users": ["{{user `ami_users`}}"],
             "ami_description":"${ami_description}",
             "skip_region_validation":"true",
             "launch_block_device_mappings": [
