@@ -6,4 +6,4 @@
 
 > For running the ami builder; if running locally, use packer in cli with base_ami.json and fill in variables at top; if running using actions, variables should exist as github secrets described in workflow files
 
-> For setting up and configuring jenkins using this ami: repo link
+> For setting up and configuring jenkins using this ami: [repo link](https://github.com/Bh-an/Jenkins-server-IAC "Jenkins server IAC repo")
