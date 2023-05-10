@@ -4,4 +4,6 @@
 - The build contains neccessary plugin for jenkins, supporting software like nginx server and certbot are also included
 - Initialising this ami build will provide a ready and running jenkins service before initial config
 
+> For running the ami builder; if running locally, use packer in cli with base_ami.json and fill in variables at top; if running using actions, variables should exist as github secrets described in workflow files
+
 > For setting up and configuring jenkins using this ami: repo link
